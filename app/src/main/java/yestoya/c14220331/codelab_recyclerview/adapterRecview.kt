@@ -16,6 +16,8 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView.
     interface OnItemClickCallback {
 
         fun onItemClicked(data: wayang)
+
+        fun delData(pos: Int)
     }
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -23,6 +25,7 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView.
     }
 
     inner class listViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        var _delButton = itemView.findViewById<ImageView>(R.id.delButton)
         var _namaWayang = itemView.findViewById<TextView>(R.id.namaWayang)
         var _karakterWayang = itemView.findViewById<TextView>(R.id.karakterWayang)
         var _deskripsiWayang = itemView.findViewById<TextView>(R.id.deskripsiWayang)
@@ -53,6 +56,10 @@ class adapterRecView (private val listWayang: ArrayList<wayang>) : RecyclerView.
         holder._gambarWayang.setOnClickListener {
 //            Toast.makeText(holder.itemView.context, "Kamu memilih " + wayang.nama, Toast.LENGTH_LONG).show()
             onItemClickCallback.onItemClicked(listWayang[position])
+        }
+
+        holder._delButton.setOnClickListener {
+            onItemClickCallback.delData(position)
         }
 
 
