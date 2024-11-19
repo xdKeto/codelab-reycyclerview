@@ -1,57 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp">
 
     <ImageView
         android:id="@+id/gambarWayang"
-        android:layout_width="0dp"
-        android:layout_height="86dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginEnd="19dp"
-        android:background="@drawable/dummy"
-        app:layout_constraintBottom_toBottomOf="@+id/deskripsiWayang"
-        app:layout_constraintEnd_toStartOf="@+id/namaWayang"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#ffffff"
+        android:src="@drawable/dummy"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/namaWayang"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/namaWayang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="16dp"
         android:text="namaWayang"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/karakterWayang"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gambarWayang"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/karakterWayang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="karakterWayang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/namaWayang"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/namaWayang"
+        app:layout_constraintTop_toBottomOf="@id/namaWayang" />
 
     <TextView
         android:id="@+id/deskripsiWayang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:text="deskripsiWayang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gambarWayang"
-        app:layout_constraintTop_toBottomOf="@+id/karakterWayang"
-        app:layout_constraintVertical_bias="1.0" />
-
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/namaWayang"
+        app:layout_constraintTop_toBottomOf="@id/karakterWayang" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
